@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+:root {
+  --white: #fff;
+  --black: #1c2b2d;
+  --blue: #31326f;
+  --light-blue: #005490;
+  --color-primary: #9d0191;
+  --color-sec: #db6400;
+  --grey: #eee;
+  --dark-grey: #222831;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.count {
+  border: 3px solid greenyellow;
+  background-color: #005490;
+  padding: 5rem;
+  border-radius: 2rem;
+  text-align: center;
+  box-shadow: 14px 4px 27px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 14px 4px 27px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 14px 4px 27px -3px rgba(0, 0, 0, 0.75);
+}
+
+.count > * {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 4rem;
+}
+
+.number {
+  color: #fff;
+}
+
+.buttons button {
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 1rem;
+  box-shadow: 14px 4px 27px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 14px 4px 27px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 14px 4px 27px -3px rgba(0, 0, 0, 0.75);
+}
+
+.buttons button:hover {
+  box-shadow: 14px 4px 27px -3px rgba(254, 76, 76, 0.75);
+  -webkit-box-shadow: 14px 4px 27px -3px rgba(254, 76, 76, 0.75);
+  -moz-box-shadow: 14px 4px 27px -3px rgba(254, 76, 76, 0.75);
+}
+
+.subtract {
+  background-color: tomato;
+  color: #fff;
+}
+.add {
+  background-color: greenyellow;
+  color: black;
+}
