@@ -23,7 +23,7 @@ guess(answer) {
 
 
 isEnded() {
-    return this.questionIndex === this.questions.lenght
+    return this.questionIndex === this.questions.length
 }
 
 }
@@ -48,13 +48,13 @@ isCorrectAnswer(choice) {
 
 function displayQuestion() {
     if (quiz.isEnded()) {
-        showScore()
+        showScores()
     }
 
 else {
     //show next question
     let questionElement = document.getElementById("question");
-    questionElement.innerHTML = quiz.getQuestonIndex().text
+    questionElement.innerHTML = quiz.getQuestonIndex().text;
 
     //show options
 
@@ -86,10 +86,10 @@ function guess(id, guess) {
 //SHOW QUIZ PROGRESS
 
 function showProgress() {
-    let currentQuetionNumber = quiz.questionIndex + 1
-    let progresElement = document.getElementById("progres")
-    progresElement.innerHTML = `
-    question ${currentQuetionNumber} of ${quiz.question.lenght}`
+    let currentQuestionNumber = quiz.questionIndex + 1
+    let progressElement = document.getElementById("progress")
+    progressElement.innerHTML = `
+    question ${currentQuestionNumber} of ${quiz.questions.length}`
 }
 
 
@@ -100,13 +100,13 @@ function showScores() {
     let quizEndHTML = 
     `
     <h1> QUIZ Completed</h1>
-    <h2 id="score">You Scored: ${quiz.score} of ${quiz.question.lenght}</h2>
+    <h2 id="score">You Scored: ${quiz.score} of ${quiz.questions.length}</h2>
 <div class= "quiz-repeat">
 <a href ="index.html">Take Quiz Again</a>
 </div>
     `
 let quizElement = document.getElementById("quiz")
-quizElement.innerHTML = quizEndHTML
+quizElement.innerHTML = quizEndHTML;
 
 }
 
@@ -114,19 +114,19 @@ quizElement.innerHTML = quizEndHTML
 
 let questions = [
     new Question(
-        "FIRST QUESTION YOUR NAME?", [Mantas, Tomas, HAris, NoOne], "Mantas"   
+        "FIRST QUESTION YOUR NAME?", ["Mantas", "Tomas", "HAris", "NoOne"], "Mantas"   
     ),
     new Question(
-        "FIRST QUESTION YOUR NAME?", [Mantas, Tomas, HAris, NoOne], "Mantas" 
+        "FIRST QUESTION YOUR NAME?", ["Mantas", "Tomas", "HAris", "NoOne"], "Mantas" 
     ),
     new Question(
-        "FIRST QUESTION YOUR NAME?", [Mantas, Tomas, HAris, NoOne], "Mantas"  
+        "FIRST QUESTION YOUR NAME?", ["Mantas", "Tomas", "HAris", "NoOne"], "Mantas"  
     ), 
     new Question(
-        "FIRST QUESTION YOUR NAME?", [Mantas, Tomas, HAris, NoOne], "Mantas"  
+        "FIRST QUESTION YOUR NAME?", ["Mantas", "Tomas", "HAris", "NoOne"], "Mantas"  
     ),
     new Question(
-        "FIRST QUESTION YOUR NAME?", [Mantas, Tomas, HAris, NoOne], "Mantas"  
+        "FIRST QUESTION YOUR NAME?", ["Mantas", "Tomas", "HAris", "NoOne"], "Mantas"  
     )
 ];
 
@@ -137,4 +137,29 @@ let quiz = new Quiz(questions)
 displayQuestion()
 
 
+// ADD TIMEOUT 
 
+
+let time = 1;
+let quizTimeInMinutes = time*60 *60;
+let quizTime = quizTimeInMinutes / 60
+
+
+let counting = document.getElementById("countdown")
+
+function startCoundown() {
+    let quizTimer = setInterval(function() {
+        if (quizTime<=0) {
+            clearInterval(quizTimer)
+            showScores()
+        } else {
+            quizTime--
+            let sec = Math.floor(quizTime % 60)
+            let min = Math.floor(quizTime / 60) % 60
+            counting.innerHTML = `Time ${min} : ${sec}`;
+        }
+    }, 1000)
+}
+
+
+startCoundown()
