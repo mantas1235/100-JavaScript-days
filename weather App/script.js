@@ -36,6 +36,8 @@ function displayData(response) {
     err.textContent = "Please enter A valid city"
 search.value = ""
 
+
+
   }
 
 else {
@@ -72,6 +74,13 @@ const iconURL = "http://openweathermap.org/img/w/"
 weatherIcon.src = iconURL + response.weather[0].icon + ".png";
 
 search.value = ""
+console.log(response);
+
+if (response.weather[0].main === "Clear") {
+   const body =  document.querySelector(".main-container")
+   body.style.backgroundImage = "url('./images/sunny.jpg')";
+}
+
 }
 
 
