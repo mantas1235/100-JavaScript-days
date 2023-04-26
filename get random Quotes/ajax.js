@@ -23,7 +23,7 @@ if (this.status=== 200) {
 
     // console.log(this.responseText);
 
-const response = suffle(JSON.parse(this.responseText)) 
+const response = shuffle(JSON.parse(this.responseText)) 
 
 let output = ""
 
@@ -59,34 +59,33 @@ https.send()
 }
 
 
-   
+
+
 
 }
 
+//CI is CUrrent index
 
-//FUNCTION TO SHUFFLE THE QUOTES
 
-
-function suffle(quotes) {
-    let CI = quotes.length, tempValue, randomIndex
-
-//WHILE ELEMENTS EXIST IN THE ARRAY
-
-while (CI>0) {
+function shuffle(quotes) {
+    let CI = quotes.length, tempValue, randomIndex;
     
-randomIndex= Math.floor(Math.random()* CI);
-
-//DECRESE CI BY 1
-
-CI--;
-
-//SWAP LAST ELEMENT WITH CI
-
-tempValue = quotes[CI]
-quotes[CI] = quotes[randomIndex]
-quotes[randomIndex] = tempValue
-
-}
-
-return quotes
-}
+    
+    while(CI>0) {
+    randomIndex = Math.floor(Math.random() * CI)
+    
+    CI--
+    
+    //SWAP the last eleMENT WITH CI\
+    
+    
+    tempValue = quotes[CI]
+    
+    quotes[CI] = quotes[randomIndex]
+    
+    quotes[randomIndex] = tempValue
+    
+    }
+    
+    return quotes
+    }
