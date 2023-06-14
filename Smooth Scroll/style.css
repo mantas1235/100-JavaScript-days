@@ -105,3 +105,23 @@ h2 {
 .flex > *  {
   margin: 5px;
 }
+
+
+.scroll {
+  position: fixed;
+  bottom: 3rem;
+  right: 2rem;
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid var(--dark-grey);
+  font-size: 2rem;
+  opacity: 0;
+  transform: translateY(10rem);
+  transition: all 0.3s;
+}
+
+
+.showBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
