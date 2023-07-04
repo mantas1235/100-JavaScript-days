@@ -129,9 +129,18 @@ h2 {
 }
 
 
+
+/* Hide submenu */
+
+
+.submenu-three {
+  display: none;
+}
+
+
 /*responsive menu */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .flex {
    flex-direction: column;
   }
@@ -148,37 +157,88 @@ nav i {
   right: 3rem;
   transform: translateY(-20rem);
 transition: all 0.5s;
+z-index: 11;
+}
+
+.hamburger {
+z-index: 11;
+}
+
+.nav-list, .nav-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 2rem;
+  transform: translateX(200%) ;
+  transition: all 0.5s;
 }
 
 .nav-list {
-  flex-direction: column;
-  width: 90%;
-  margin: 0 auto;
-  padding: 2rem 0;
-  margin-top: 1.5rem;
-  background-color: rgba(0,0,0,0.6);
-  border: 1px solid skyblue;
-  border-radius: 3px;
-  z-index: 111;
-  transform: translateY(-200%);
-  transition: all 0.5s;
+  z-index: 1;
+}
+
+.nav-wrapper{
+  width: 100%;
+  transform: translateX(-200%);
+  z-index: 1;
 }
 
 
 .nav-list li {
-  width: 80%;
-  padding: 5px 0;
-  font-size: 1.6rem;
-  border-bottom: 1px solid white;
-  text-align: center;
+  border-bottom: 1px solid var(--white);
+  padding: 0.7rem 0 0.7 1rem;
 }
 
-.nav-list li:first-child {
-  border-top: solid 1px white;
+.nav-list li a {
+color: #eee;
+transition: all 0.3s;
 }
 
 .nav-list li a:hover {
-  color: var(--color-sec);
+color: #db6400;
+margin-left: 1rem;
+}
+
+/* SubMenu Css */
+
+.three {
+  position: relative;
+
+}
+
+.fa-angle-right {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  font-size: 2rem;
+  transform: translateY(-50%);
+}
+
+.nav-list li a {
+  display: block;
+}
+
+.nav-list li a:hover ~ .fa-angle-right {
+  color: #db6400;
+}
+
+.submenu-three {
+  transform: translateX(0);
+  transition: all 0.5s;
+}
+
+.submenu-three .back {
+  display: flex;
+}
+
+.fa-arrow-left {
+  font-size: 1.5rem;
+  padding: 5px;
+  color: #db6400;
 }
 
 
