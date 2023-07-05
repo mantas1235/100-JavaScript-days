@@ -17,7 +17,6 @@ guess(answer) {
     if (this.getQuestonIndex().isCorrectAnswer(answer)) {
         this.score++
     }
-
     this.questionIndex++
 }
 
