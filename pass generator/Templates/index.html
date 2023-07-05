@@ -3,15 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Password generator</title>
     <script
       src="https://kit.fontawesome.com/1935d064dd.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <p>Hello World!!!</p>
+   <section>
+    <div class="container box">
+      <h2>Password generator</h2>
+      <div class="p-header">
+<input type="text" id="password">
+<button class="copy" id="copy">Copy</button>
+      </div>
+
+<div class="p-body">
+
+<div class="form-field">
+  <label for="p-length">Password length</label>
+  <input type="number" id="p-length" value="12" min="8" max="30">
+</div>
+<div class="form-field">
+  <label for="p-uppercase">Include uppercase</label>
+  <input type="checkbox" checked id="p-uppercase">
+</div>
+<div class="form-field">
+  <label for="p-lowercase">Include lowercase</label>
+  <input type="checkbox"  id="p-lowercase">
+</div>
+<div class="form-field">
+  <label for="p-numbers">Include numbers</label>
+  <input type="checkbox"  id="p-numbers">
+</div>
+<div class="form-field">
+  <label for="p-simbols">Include simbols</label>
+  <input type="checkbox"  id="p-simbols">
+</div>
+<button id="submit">Generate password</button>
+
+</div>
+
+
+    </div>
+   </section>
 
     <script src="script.js"></script>
   </body>
