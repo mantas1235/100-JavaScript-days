@@ -2,14 +2,19 @@ const links = document.querySelectorAll(".nav-list li a")
 const navList = document.querySelector(".nav-list")
 
 for (const link of links) {
-    link.addEventListener("click", smoothScroll) 
+
+    link.addEventListener("click", smoothScroll)
+    
 }
 
 
 
 function smoothScroll(e) {
     e.preventDefault()
+
 const href = this.getAttribute("href")
+
+
 document.querySelector(href).scrollIntoView({
     behavior: "smooth"
 }
@@ -38,8 +43,7 @@ const navLi = e.target.parentElement;
        navLi.classList.add("active")
     }
 })
-
-
+window.onscroll = () => scrollProgress()
 
 
 function scrollProgress() {
@@ -55,5 +59,22 @@ function scrollProgress() {
     progressBar.style.width = scrollPercentge + "%"
 
 
+
+    //Newsletter
+
+    const newsLetter = document.querySelector(".newsletter")
+
+
+if (scrollPercentge>95) {
+    newsLetter.style.transform = "translateX(0)"
 }
-window.onscroll = () => scrollProgress()
+else {
+    newsLetter.style.transform = "translateX(-100%)"
+}
+
+const close = document.querySelector(".fa-times")
+close.addEventListener("click", ()=> {
+    newsLetter.style.transform = "translateX(-100%)"
+})
+
+}
