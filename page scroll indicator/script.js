@@ -33,6 +33,7 @@ window.addEventListener("scroll", ()=> {
 
 //Active menu swicher
 
+
 navList.addEventListener("click", (e)=> {
     e.preventDefault()
 const navLi = e.target.parentElement;
@@ -42,3 +43,20 @@ const navLi = e.target.parentElement;
        navLi.classList.add("active")
     }
 })
+window.onscroll = () => scrollProgress()
+
+
+function scrollProgress() {
+    const currentState = document.body.scrollTop || document.documentElement.scrollTop;
+
+    const pageHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    const scrollPercentge = (currentState / pageHeight) * 100
+
+    const progressBar =  document.querySelector(".progress")
+
+    progressBar.style.visibility = "visible"
+    progressBar.style.width = scrollPercentge + "%"
+
+
+}
