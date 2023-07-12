@@ -100,9 +100,10 @@ form button {
   background-color: var(--color-sec);
   padding: 1rem;
   color: var(--grey);
+  cursor: pointer;
 }
 
-ol h2 {
+ h2 {
   font-size: 2rem;
   color: var(--color-sec);
   margin-bottom: 1rem;
@@ -137,6 +138,7 @@ li button {
   position: absolute;
   right: 1rem;
   top: 1.2rem;
+  cursor: pointer;
 }
 
 .clear {
