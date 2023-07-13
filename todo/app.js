@@ -33,10 +33,7 @@ function addTask(e){
     addTaskToLS()
     todoList.innerHTML= ""
 displayTask();
-
-
     }
-
     else {
 alert("Please enter a task")
     }
